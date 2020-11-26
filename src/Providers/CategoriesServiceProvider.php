@@ -28,7 +28,7 @@ class CategoriesServiceProvider extends ServiceProvider
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
             $this->publishes([
-                __DIR__.'/../config/categories.php' => $this->app->configPath('categorizable.php'),
+                __DIR__.'/../config/categorizable.php' => $this->app->configPath('categorizable.php'),
             ], 'config');
 
             $this->publishes([
