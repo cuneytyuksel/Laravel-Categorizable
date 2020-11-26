@@ -60,6 +60,6 @@ class Category extends Model
 
     public function getTable(): string
     {
-        return Config::get('categories.tables.categories');
+        return Config::get('categorizable.tables.categories');
     }
 }
