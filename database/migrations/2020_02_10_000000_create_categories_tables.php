@@ -21,7 +21,7 @@ class CreateCategoriesTables extends Migration
 {
     public function up()
     {
-        Schema::create(Config::get('categories.tables.categories'), function (Blueprint $table) {
+        Schema::create(Config::get('categorizable.tables.categories'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
@@ -30,7 +30,7 @@ class CreateCategoriesTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create(Config::get('categories.tables.model_has_categories'), function (Blueprint $table) {
+        Schema::create(Config::get('categorizable.tables.model_has_categories'), function (Blueprint $table) {
             $table->integer('category_id');
             $table->morphs('model');
         });
@@ -38,7 +38,7 @@ class CreateCategoriesTables extends Migration
 
     public function down()
     {
-        Schema::dropIfExists(Config::get('categories.tables.model_has_categories'));
-        Schema::dropIfExists(Config::get('categories.tables.categories'));
+        Schema::dropIfExists(Config::get('categorizable.tables.model_has_categories'));
+        Schema::dropIfExists(Config::get('categorizable.tables.categories'));
     }
 }
