@@ -22,7 +22,7 @@ trait HasCategories
     public function categories(): MorphToMany
     {
         return $this->morphToMany(
-            Config::get('categories.models.category'),
+            Config::get('categorizable.models.category'),
             'model',
             'model_has_categories'
         );
