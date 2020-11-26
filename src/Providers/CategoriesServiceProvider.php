@@ -19,7 +19,7 @@ class CategoriesServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/categories.php', 'categories');
+        $this->mergeConfigFrom(__DIR__.'/../config/categorizable.php', 'categorizable');
     }
 
     public function boot(): void
@@ -28,7 +28,7 @@ class CategoriesServiceProvider extends ServiceProvider
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
             $this->publishes([
-                __DIR__.'/../config/categories.php' => $this->app->configPath('categories.php'),
+                __DIR__.'/../config/categories.php' => $this->app->configPath('categorizable.php'),
             ], 'config');
 
             $this->publishes([
